@@ -11,7 +11,7 @@
   
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="body">
     <div class="header">
         <h1>Inventario</h1>
         <p class="azul">Registro y búsqueda de Inventario</p>
@@ -24,7 +24,7 @@
                 <form>
                     <div class="field">
                         <label>Código:</label>
-                        <input class="inputs" type="number" name="code" id="code" maxlength="10" placeholder="Ingrese el código">
+                        <input class="inputs" type="number" name="code" id="code" maxlength="5" placeholder="Ingrese el código">
                     </div>
                     <div class="field">
                         <label>Nombre:</label>
@@ -37,6 +37,10 @@
                     <div class="field">
                         <label>Costo:</label>
                         <input class="inputs" type="number" name="cost" id="cost" placeholder="Ingrese el costo">
+                    </div>
+                    <div class="field">
+                        <label>Posición donde registrar el producto</label>
+                        <select class="inputs" name="position" id="position"></select>
                     </div>
                     <div class="field">
                         <input class="button" type="button" value="Agregar" id="bttnAdd">
@@ -61,14 +65,14 @@
         <div class="searchingLeft">
             <h2>Acciones</h2>
             <input type="button" value="Mostrar todos los productos" id="bttnShow" class="button">
-            <input type="button" value="Mostrar los productos por úlimo agregado" id="bttnShow" class="button">
+            <input type="button" value="Mostrar los productos por úlimo agregado" id="bttnShowLast" class="button">
 
         </div>
             
 
         
     </div>
-    
+
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="main.js" type="module"></script>
 </body>

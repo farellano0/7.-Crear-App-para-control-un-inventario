@@ -73,6 +73,8 @@
     border-radius: 4px;
     font-family: 'calibri';
     color: white;
+    box-shadow: 7px 13px 37px #000;
+    margin-top: 0.25cm;
   }
 
   .searching {
@@ -81,6 +83,8 @@
       padding: 30px;
       border-radius: 4px;
       float: right;
+      box-shadow: 7px 13px 37px #000;
+      margin-top: 0.25cm;
 
   }
 
@@ -90,6 +94,7 @@
     padding: 30px;
     border-radius: 4px;
     margin:auto;
+    box-shadow: 7px 13px 37px #000;
 
 }
 
@@ -112,4 +117,10 @@
       color: white;
       margin: 16px 0;
       font-size: 16px;
+  }
+
+  .table {
+      margin: auto;
+      margin-top: 1cm;
+      border-color: black;
   }
