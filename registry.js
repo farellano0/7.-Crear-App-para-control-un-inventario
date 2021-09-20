@@ -21,12 +21,22 @@ export default class Registry {
     }
 
     delete(codeProduct){
+        let nVector = new Array();
         let pos = this._findProductByCode(codeProduct);
 
-        this._registry.splice(pos, 1);
-    }
+        if(pos < 0){
+            return false;
+        } else {
+            for(let i = 0; i <= this._registry.length; i++){
+                if(codeProduct !== this._registry[i].getCode()){
+                    nVector.push(this._registry[i]);
+                }
+            }
 
-    
+            this._registry = nVector;
+            return true;
+        }
+    }
 
     //Métodos Privados
 

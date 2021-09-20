@@ -111,7 +111,7 @@ class App {
     }
 
     showProduct = () => {
-        if(this.registry == 0){
+        if(this.registry.length == 0){
             Swal.fire('Nada', 'No hay productos registrados', 'info');
             return;
         }
