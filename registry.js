@@ -1,6 +1,7 @@
 export default class Registry {
     constructor(){
         this._registry = new Array();
+        this._registryInverted = new Array();
     }
     
     add(product){
@@ -64,6 +65,16 @@ export default class Registry {
         })
 
         return pos;
+    }
+
+    getArrayInverted(){
+        let inverted = new Array();
+
+        for(let i = this._registry.length - 1; i >= 0; i--){
+            inverted.push(this._registry[i]);
+        }
+
+        return inverted;
     }
 
     getRegistry(){

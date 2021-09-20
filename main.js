@@ -95,7 +95,7 @@ class App {
             return;
         }
 
-        if(this.registry._findProductByCode(deleteCode)){
+        if(this.registry._findProductByCode(deleteCode) === false){
             inpCode.value = "";
 
             Swal.fire('Error', 'El producto no existe', 'error');
@@ -111,8 +111,39 @@ class App {
 
     showProduct = () => {
         let products = this.registry.getRegistry()
-        console.log(products);
+
+        if(products.length == 0){
+            Swal.fire('Ninguno', 'No hay productos registrados', 'warning');
+            return;
+        }
         
+        let myTable = "<table><tr><th>Código</th>";
+        myTable += "<th>Nombre</th>";
+        myTable += "<th>Cantidad</th>";
+        myTable += "<th>Costo</th>";
+        myTable += "<th>Costo Total</th></tr>";
+
+        for(let i = 0; i < products.length; i++) {
+            myTable += `<tr><td>${products[i].getCode()}</td>`;
+            myTable += `<td>${products[i].getName()}</td>`;
+            myTable += `<td>${products[i].getAmount()}</td>`;
+            myTable += `<td>${products[i].getCost()}</td>`;
+            myTable += `<td>${products[i].getTotalCost()}</td>`;
+            myTable += '</tr>';
+        }
+
+        myTable += `</table>`;
+
+        document.getElementById('table').innerHTML = myTable;
+    }
+    showLast = () => {
+        let products = this.registry.getArrayInverted();
+
+        if(products.length == 0){
+            Swal.fire('Ninguno', 'No hay productos registrados', 'warning');
+            return;
+        }
+
         let myTable = "<table><tr><th>Código</th>";
         myTable += "<th>Nombre</th>";
         myTable += "<th>Cantidad</th>";

@@ -1,7 +1,7 @@
 export default class Product {
     constructor(code, name, amount, cost){
        this._code  = code;
-       this._name = name;
+       this._name = name.toUpperCase();
        this._amount = amount;
        this._cost = cost;
     }
