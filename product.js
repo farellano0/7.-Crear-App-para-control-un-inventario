@@ -50,26 +50,13 @@ export default class Product {
         return this._cost;
     }
 
-    static readForm(){
-        let inpCode = document.querySelector('#code');
-        let inpName = document.querySelector('#name');
-        let inpAmount = document.querySelector('#amount');
-        let inpCost = document.querySelector('#cost');
-
-        let code = inpCode.value;
-        let name = inpName.value;
-        let amount = inpAmount.value;
-        let cost = inpCost.value;
-
-        if(code && name && amount && cost){
-            inpCode.value = '';
-            inpName.value = '';
-            inpAmount.value = '';
-            inpCost.value = '';
-
-            return new Product(code, name, amount, cost);
-        }
-
-        return false;
+    infoHtml(){
+        return `<div>
+                    <p>Código: ${this.getCode()}</p>
+                    <p>Nombre: ${this.getName()}</p>
+                    <p>Cantidad: ${this.getAmount()}</p>
+                    <p>Costo Individual: $${this.getCost()}</p>
+                    <p>Costo Total: $${this.getTotalCost()}</p>
+                </div>`;
     }
 }

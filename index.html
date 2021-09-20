@@ -24,7 +24,7 @@
                 <form>
                     <div class="field">
                         <label>Código:</label>
-                        <input class="inputs" type="number" name="code" id="code" maxlength="5" placeholder="Ingrese el código">
+                        <input class="inputs" type="text" name="code" id="code" maxlength="5" placeholder="Ingrese el código">
                     </div>
                     <div class="field">
                         <label>Nombre:</label>
@@ -45,29 +45,32 @@
                     <div class="field">
                         <input class="button" type="button" value="Agregar" id="bttnAdd">
                     </div>
+                    <div class="field">
+                        <h2>Buscador</h2>
+                        <div>
+                            <input class="inputs" type="number" name="number" id="searchCode" placeholder="Ingrese el código del producto">
+                            <input class="button" type="button" value="Buscar" id="bttnSearch">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <h2>Eliminar un producto</h2>
+                        <div>
+                            <input class="inputs" type="number" name="productCode" id="eraseCode" placeholder="Ingrese el código del producto">
+                            <input class="button" type="button" value="Borrar" id="bttnErase">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <h2>Acciones</h2>
+                        <input type="button" value="Mostrar todos los productos" id="bttnShow" class="buttonAction">
+                        <input type="button" value="Mostrar los productos inverso" id="bttnShowLast" class="buttonAction">
+                    </div>
                 </form>
+                </div>
             </div>
         </div>
-        <div class="searching">
-            <h2>Buscador</h2>
-            <div>
-                <input class="inputs" type="number" name="number" id="searchcode" placeholder="Ingrese el código del producto">
-                <input class="button" type="button" value="Buscar" id="bttnSearch">
-            </div>
-        </div>
-        <div class="searching">
-            <h2>Eliminar un producto</h2>
-            <div>
-                <input class="inputs" type="number" name="productCode" id="eraseCode" placeholder="Ingrese el código del producto">
-                <input class="button" type="button" value="Borrar" id="bttnErase">
-            </div>
-        </div>
-        <div class="searchingLeft">
-            <h2>Acciones</h2>
-            <input type="button" value="Mostrar todos los productos" id="bttnShow" class="button">
-            <input type="button" value="Mostrar los productos por úlimo agregado" id="bttnShowLast" class="button">
-
-        </div>
+        <div class="details" id = 'details'></div>
+                <div>
+                    <table id="table"></table>
             
 
         
