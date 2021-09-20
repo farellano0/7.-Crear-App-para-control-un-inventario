@@ -107,15 +107,30 @@ class App {
             Swal.fire('Eliminado', 'Se eliminó el producto', 'success');
             return;
         }
-
     }
 
     showProduct = () => {
-        if(this.registry.length == 0){
-            Swal.fire('Nada', 'No hay productos registrados', 'info');
-            return;
-        }
+        let products = this.registry.getRegistry()
+        console.log(products);
         
+        let myTable = "<table><tr><th>Código</th>";
+        myTable += "<th>Nombre</th>";
+        myTable += "<th>Cantidad</th>";
+        myTable += "<th>Costo</th>";
+        myTable += "<th>Costo Total</th></tr>";
+
+        for(let i = 0; i < products.length; i++) {
+            myTable += `<tr><td>${products[i].getCode()}</td>`;
+            myTable += `<td>${products[i].getName()}</td>`;
+            myTable += `<td>${products[i].getAmount()}</td>`;
+            myTable += `<td>${products[i].getCost()}</td>`;
+            myTable += `<td>${products[i].getTotalCost()}</td>`;
+            myTable += '</tr>';
+        }
+
+        myTable += `</table>`;
+
+        document.getElementById('table').innerHTML = myTable;
     }
 
     

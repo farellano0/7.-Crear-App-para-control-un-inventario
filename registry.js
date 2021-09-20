@@ -23,12 +23,16 @@ export default class Registry {
     delete(codeProduct){
         let nVector = new Array();
         let pos = this._findProductByCode(codeProduct);
+        console.log(pos);
 
         if(pos < 0){
             return false;
         } else {
-            for(let i = 0; i <= this._registry.length; i++){
-                if(codeProduct !== this._registry[i].getCode()){
+            console.log(this._registry);
+            for(let i = 0; i < this._registry.length; i++){
+                console.log(this._registry[i])
+                console.log(this._registry[i].getCode());
+                if(this._registry[i].getCode() !== codeProduct){
                     nVector.push(this._registry[i]);
                 }
             }
@@ -60,5 +64,9 @@ export default class Registry {
         })
 
         return pos;
+    }
+
+    getRegistry(){
+        return this._registry;
     }
 }

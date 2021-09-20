@@ -13,9 +13,8 @@
   
   h2 {
     padding-top: 10px;
-    padding-left: 20px;
     padding-bottom: 20px;
-    text-align: left;
+    text-align: center;
     color: #ff5200;
   }
   
@@ -25,7 +24,10 @@
   }
   
   table {
-    width: 100%;
+    width: 60%;
+    margin:auto;
+    padding-top: 5cm;
+    padding-left: 5cm;
   }
   
   label {
@@ -47,9 +49,8 @@
   
   .content-info {
     width: 20%;
-    padding-left: 30px;
-    float: left;
-    margin-left: auto;
+    padding-left: 30px; 
+    float: left;  
   }
   
   .left {
@@ -63,6 +64,11 @@
   
   .field {
     margin-top: 10px;
+  }
+
+  .fieldbutton {
+    margin-top: 5px;
+    text-align: center;
   }
   
   .center{
@@ -86,16 +92,13 @@
   
   .info {
     padding: 10px;
-    margin: auto;
-    align-items: left;
-    width: 20%;
+    margin-top: 1cm;
+    margin-right: 40%;
+    width: 8cm;
     border: 6px solid black;
     border: 2px solid gray;
+    float: right;
+    
   }
 
-  table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    width: 50%;
-    align-items: left;   
-}
+  
