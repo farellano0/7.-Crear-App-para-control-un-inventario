@@ -26,6 +26,8 @@ export default class Registry {
         this._registry.splice(pos, 1);
     }
 
+    
+
     //Métodos Privados
 
     _findProduct(product){

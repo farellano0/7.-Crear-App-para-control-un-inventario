@@ -110,6 +110,14 @@ class App {
 
     }
 
+    showProduct = () => {
+        if(this.registry == 0){
+            Swal.fire('Nada', 'No hay productos registrados', 'info');
+            return;
+        }
+        
+    }
+
     
 }
 

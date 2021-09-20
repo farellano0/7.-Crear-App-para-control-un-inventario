@@ -91,5 +91,11 @@
     width: 20%;
     border: 6px solid black;
     border: 2px solid gray;
-
   }
+
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 50%;
+    align-items: left;   
+}
