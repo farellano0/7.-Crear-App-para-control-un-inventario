@@ -12,7 +12,7 @@ class App {
 
         btnAdd.addEventListener('click', this.addProduct);
         btnSrch.addEventListener('click', this.searchProduct);
-        btnErs.addEventListener('click', this.eraseProduct);
+        btnErs.addEventListener('click', this.deleteProduct);
         btnShow.addEventListener('click', this.showProduct);
         btnShLa.addEventListener('click', this.showLast);
     }
@@ -79,11 +79,35 @@ class App {
              </div>`
         } else {
             inpCode.value = "";
-            
+
             Swal.fire('Lo siento', 'No se encuentra el producto solicitado', 'error');
             return;
 
         }
+    }
+
+    deleteProduct = () => {
+        let inpCode = document.querySelector('#deleteCode');
+        let deleteCode = inpCode.value;
+
+        if(deleteCode == ""){
+            Swal.fire('Oops', 'Ingrese un código de producto', 'info');
+            return;
+        }
+
+        if(this.registry._findProductByCode(deleteCode)){
+            inpCode.value = "";
+
+            Swal.fire('Error', 'El producto no existe', 'error');
+            return;
+        } else {
+            inpCode.value = "";
+            this.registry.delete(deleteCode);
+
+            Swal.fire('Eliminado', 'Se eliminó el producto', 'success');
+            return;
+        }
+
     }
 
     
